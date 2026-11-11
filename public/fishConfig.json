@@ -1,0 +1,276 @@
+{
+  "tank": {
+    "defaultVolume": 100,
+    "options": [
+      {
+        "volumeLiters": 50,
+        "name": "50 Litre Nano Akvaryum",
+        "bounds": [10, 5, 5],
+        "price": 450
+      },
+      {
+        "volumeLiters": 100,
+        "name": "100 Litre Standart Akvaryum",
+        "bounds": [14, 7, 7],
+        "price": 750
+      },
+      {
+        "volumeLiters": 200,
+        "name": "200 Litre Geniş Akvaryum",
+        "bounds": [18, 8.5, 8.5],
+        "price": 1400
+      }
+    ],
+    "bounds": [14, 7, 7],
+    "volumeLiters": 100,
+    "temperature": 25.5,
+    "price": 750
+  },
+  "catalog": {
+    "substrates": [
+      {
+        "id": "silica_sand",
+        "name": "Silis Kumu",
+        "category": "Zemin",
+        "color": "#e2ded0",
+        "roughness": 0.85,
+        "metalness": 0.05,
+        "icon": "🏖️",
+        "description": "Doğal açık renkli akvaryum silis kumu.",
+        "price": 15,
+        "ecology": {
+          "phEffect": 0.3,
+          "ppmFactor": 0.2
+        }
+      },
+      {
+        "id": "active_carbon",
+        "name": "Aktif Karbon Toprak",
+        "category": "Zemin",
+        "color": "#241d1a",
+        "roughness": 0.9,
+        "metalness": 0.1,
+        "icon": "🪨",
+        "description": "Bitkili akvaryumlar için koyu renkli besleyici aktif toprak.",
+        "price": 45,
+        "ecology": {
+          "phEffect": -0.8,
+          "ppmFactor": 0.5
+        }
+      }
+    ],
+    "fishes": [
+      {
+        "id": "pleco",
+        "name": "Leopar Vatoz",
+        "category": "Balık",
+        "modelPath": "/models/pleco.glb",
+        "texturePath": "/textures/plecoTexture.jpg",
+        "behavior": "bottom_dweller",
+        "layer": "bottom",
+        "icon": "🐟",
+        "description": "Akvaryum tabanında sabit kalan ve temizlik yapan dip balığı.",
+        "price": 80,
+        "appearance": { "color": "#8c928d", "roughness": 0.4, "metalness": 0.1 },
+        "physics": { "minSpeed": 0.006, "maxSpeed": 0.015, "diveInterval": 300, "verticalFreedom": 0.0, "turnSpeed": 0.04 },
+        "ecology": {
+          "oxygenConsumption": 0.15,
+          "bioloadPpm": 2.5
+        }
+      },
+      {
+        "id": "neon_tetra",
+        "name": "Neon Tetra",
+        "category": "Balık",
+        "behavior": "normal",
+        "layer": "mid",
+        "icon": "🐠",
+        "description": "Orta su katmanında parıldayan, sürü oluşturan neon mavi ve kırmızı balık.",
+        "price": 35,
+        "appearance": { "color": "#00e5ff", "secondaryColor": "#ff1744", "roughness": 0.2, "metalness": 0.6 },
+        "physics": { "minSpeed": 0.018, "maxSpeed": 0.032, "diveInterval": 180, "verticalFreedom": 0.04, "turnSpeed": 0.05 },
+        "ecology": {
+          "oxygenConsumption": 0.06,
+          "bioloadPpm": 0.8
+        }
+      },
+      {
+        "id": "guppy",
+        "name": "Renkli Lepistes",
+        "category": "Balık",
+        "behavior": "surface_dweller",
+        "layer": "surface",
+        "icon": "🐡",
+        "description": "Su yüzeyine yakın yüzen, gösterişli ve dalgalanan renkli kuyruklu balık.",
+        "price": 45,
+        "appearance": { "color": "#f43f5e", "secondaryColor": "#f59e0b", "roughness": 0.3, "metalness": 0.4 },
+        "physics": { "minSpeed": 0.014, "maxSpeed": 0.026, "diveInterval": 220, "verticalFreedom": 0.02, "turnSpeed": 0.045 },
+        "ecology": {
+          "oxygenConsumption": 0.08,
+          "bioloadPpm": 1.0
+        }
+      },
+      {
+        "id": "corydoras",
+        "name": "Komando Çöpçü",
+        "category": "Balık",
+        "behavior": "bottom_dweller",
+        "layer": "bottom",
+        "icon": "🐟",
+        "description": "Kumu karıştırarak yem artıklarını temizleyen sevimli dip balığı.",
+        "price": 50,
+        "appearance": { "color": "#78716c", "secondaryColor": "#44403c", "roughness": 0.5, "metalness": 0.2 },
+        "physics": { "minSpeed": 0.015, "maxSpeed": 0.028, "diveInterval": 150, "verticalFreedom": 0.0, "turnSpeed": 0.06 },
+        "ecology": {
+          "oxygenConsumption": 0.1,
+          "bioloadPpm": 1.2
+        }
+      }
+    ],
+    "plants": [
+      {
+        "id": "anubias",
+        "name": "Anubias Nana",
+        "category": "Bitki",
+        "icon": "🌿",
+        "description": "Akvaryum tabanına köklenen, oksijen üreten dayanıklı yeşil bitki.",
+        "color": "#16a34a",
+        "price": 75,
+        "positions": [
+          [-4, 0, -2],
+          [4, 0, 2],
+          [-2, 0, 2]
+        ],
+        "ecology": {
+          "oxygenProduction": 0.45,
+          "ppmReduction": 3.0
+        }
+      },
+      {
+        "id": "alternanthera",
+        "name": "Alternanthera Reineckii",
+        "category": "Bitki",
+        "icon": "🌱",
+        "description": "Kırmızımsı yapraklarıyla akvaryuma canlılık katan ve suyu filtreleyen bitki.",
+        "color": "#dc2626",
+        "price": 85,
+        "positions": [
+          [0, 0, -2.5],
+          [3, 0, -1.5]
+        ],
+        "ecology": {
+          "oxygenProduction": 0.55,
+          "ppmReduction": 4.0
+        }
+      },
+      {
+        "id": "vallisneria",
+        "name": "Saz Bitkisi (Vallisneria)",
+        "category": "Bitki",
+        "icon": "🌾",
+        "description": "Yüzeye kadar uzanan uzun şerit yapraklarıyla su akıntısında dans eden saz.",
+        "color": "#22c55e",
+        "price": 60,
+        "positions": [
+          [-4.5, 0, 2.2],
+          [-3.5, 0, 2.4],
+          [4.5, 0, -2.2]
+        ],
+        "ecology": {
+          "oxygenProduction": 0.6,
+          "ppmReduction": 4.5
+        }
+      },
+      {
+        "id": "java_fern",
+        "name": "Java Fern (Mikrosum)",
+        "category": "Bitki",
+        "icon": "🌿",
+        "description": "Kaya ve kütüklere tutunan, tırtıklı geniş yapraklı doğal akvaryum eğreltisi.",
+        "color": "#15803d",
+        "price": 90,
+        "positions": [
+          [2, 0, 1.8],
+          [-1.5, 0, -1.8]
+        ],
+        "ecology": {
+          "oxygenProduction": 0.5,
+          "ppmReduction": 3.5
+        }
+      }
+    ],
+    "decorations": [
+      {
+        "id": "dragon_stone",
+        "name": "Ejder Kayası (Dragon Stone)",
+        "category": "Dekor",
+        "icon": "🪨",
+        "description": "Gözenekli kraterik yapısıyla akvaryuma doğal bir dağ peyzajı kazandırır.",
+        "type": "rock",
+        "price": 120,
+        "positions": [
+          [-2.5, 0, -1.0],
+          [2.5, 0, 1.2]
+        ]
+      },
+      {
+        "id": "slate_cave",
+        "name": "Doğal Balık Mağarası",
+        "category": "Dekor",
+        "icon": "🏛️",
+        "description": "Vatoz ve çöpçü balıklarının içerisine girip dinlenebileceği koyu renkli taş tünel.",
+        "type": "cave",
+        "price": 180,
+        "positions": [
+          [0.5, 0, 0.5]
+        ]
+      }
+    ],
+    "equipments": [
+      {
+        "id": "external_filter",
+        "name": "Biyolojik Dış Filtre",
+        "category": "Ekipman",
+        "icon": "⚙️",
+        "description": "Suyu aralıksız devridaim yaparak organik atıkları (PPM) temizler ve suyun sararmasını önler.",
+        "type": "filter",
+        "price": 850,
+        "ecology": {
+          "ppmReductionRate": 25.0
+        }
+      },
+      {
+        "id": "smart_heater",
+        "name": "Akıllı Termostatlı Isıtıcı",
+        "category": "Ekipman",
+        "icon": "🌡️",
+        "description": "Akvaryum suyunu 25.5°C ideal sıcaklıkta sabit tutarak balıkların şoka girmesini engeller.",
+        "type": "heater",
+        "price": 320,
+        "ecology": {
+          "targetTemp": 25.5
+        }
+      },
+      {
+        "id": "air_pump_stone",
+        "name": "Hava Taşı & Baloncuk Sistemi",
+        "category": "Ekipman",
+        "icon": "🫧",
+        "description": "Tabandan yüzeye doğru süzülen oksijen baloncukları oluşturarak suya can katar.",
+        "type": "airstone",
+        "price": 140,
+        "ecology": {
+          "oxygenBoost": 2.5
+        }
+      }
+    ]
+  },
+  "activeTank": {
+    "selectedSubstrate": null,
+    "substrateKg": 0,
+    "fishes": [],
+    "plants": [],
+    "decorations": [],
+    "equipments": []
+  }
+}

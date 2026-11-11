@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/HP/Desktop/fishLab/src/app/page.tsx"],"sourcesContent":["import AquariumScene from '@/components/aquariumScene';\r\n\r\nexport default function Home() {\r\n  return <AquariumScene />;\r\n}"],"names":["Home"],"mappings":";;;;;AAAA;;;AAEe,SAASA;IACtB,qBAAO,8OAAC,8IAAa;;;;;AACvB"}},
+    {"offset": {"line": 32, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}}]
+}
