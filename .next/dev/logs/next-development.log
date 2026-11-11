@@ -1,25 +1,21 @@
-{"timestamp":"00:00:01.976","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:09.574","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:00:09.941","source":"Browser","level":"WARN","message":"THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
-{"timestamp":"00:00:10.000","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
-{"timestamp":"00:57:09.947","source":"Server","level":"LOG","message":"✓ Compiled in 197ms"}
-{"timestamp":"00:58:04.582","source":"Server","level":"LOG","message":"✓ Compiled in 156ms"}
-{"timestamp":"00:58:29.655","source":"Server","level":"LOG","message":"✓ Compiled in 257ms"}
-{"timestamp":"00:58:40.071","source":"Server","level":"LOG","message":"✓ Compiled in 163ms"}
-{"timestamp":"00:59:08.024","source":"Server","level":"LOG","message":"✓ Compiled in 191ms"}
-{"timestamp":"01:00:01.159","source":"Server","level":"LOG","message":"✓ Compiled in 391ms"}
-{"timestamp":"01:00:01.167","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
-{"timestamp":"01:00:02.005","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"01:18:22.025","source":"Browser","level":"WARN","message":"THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
-{"timestamp":"01:18:22.026","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
-{"timestamp":"01:18:23.742","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"01:18:24.216","source":"Browser","level":"WARN","message":"THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
-{"timestamp":"01:18:24.217","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
-{"timestamp":"02:46:23.672","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"02:46:24.297","source":"Browser","level":"WARN","message":"THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
-{"timestamp":"02:46:24.299","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
-{"timestamp":"02:52:31.119","source":"Server","level":"LOG","message":"✓ Compiled in 288ms"}
-{"timestamp":"02:52:37.628","source":"Server","level":"LOG","message":"✓ Compiled in 161ms"}
-{"timestamp":"02:52:42.824","source":"Server","level":"LOG","message":"✓ Compiled in 257ms"}
-{"timestamp":"02:52:49.177","source":"Server","level":"LOG","message":"✓ Compiled in 139ms"}
-{"timestamp":"02:53:00.791","source":"Server","level":"LOG","message":"✓ Compiled in 143ms"}
+{"timestamp":"00:00:05.659","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:23.696","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:25.826","source":"Browser","level":"WARN","message":"THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"00:00:25.941","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"00:31:48.515","source":"Server","level":"LOG","message":"✓ Compiled in 2s"}
+{"timestamp":"00:35:02.758","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
+{"timestamp":"00:35:02.783","source":"Server","level":"LOG","message":"✓ Compiled in 137ms"}
+{"timestamp":"00:35:03.544","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:36:05.760","source":"Browser","level":"WARN","message":"THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"00:36:05.763","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"00:36:07.721","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:36:08.370","source":"Browser","level":"WARN","message":"THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"00:36:08.371","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"00:37:32.180","source":"Server","level":"LOG","message":"✓ Compiled in 78ms"}
+{"timestamp":"00:38:38.448","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:38:38.983","source":"Browser","level":"WARN","message":"THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"00:38:38.985","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}
+{"timestamp":"00:40:29.624","source":"Server","level":"LOG","message":"✓ Compiled in 135ms"}
+{"timestamp":"00:40:51.746","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:40:52.401","source":"Browser","level":"WARN","message":"THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."}
+{"timestamp":"00:40:52.404","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mTHREE.Clock: This module has been deprecated. Please use THREE.Timer instead.\\u001b[39m\""}

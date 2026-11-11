@@ -268,7 +268,6 @@ export default function AquariumScene() {
     if (hasHeater) {
       baseTemp = 25.5;
     } else {
-      // Isıtıcı yoksa ortam sıcaklığına doğru düşüş
       baseTemp = 22.0;
     }
 
@@ -301,10 +300,10 @@ export default function AquariumScene() {
 
     // Filtre ve Hava Taşı donanım etkisi
     if (hasFilter) {
-      totalPlantPpmReduction += 25.0; // Biyolojik dış filtre atığı emer
+      totalPlantPpmReduction += 25.0;
     }
     if (hasAirStone) {
-      totalPlantOxygen += 2.5; // Hava taşı bol oksijen kazandırır
+      totalPlantOxygen += 2.5;
     }
 
     const finalOxygen = Math.max(1.8, baseOxygen + totalPlantOxygen - totalOxygenConsumption);
@@ -312,7 +311,6 @@ export default function AquariumScene() {
 
     const totalFish = Object.values(fishCounts).reduce((a, b) => a + b, 0);
 
-    // Su kalitesi seviyeleri:
     let qLevel = 0;
     let quality = 'Kristal & Berrak (Seviye 1)';
 
@@ -385,10 +383,8 @@ export default function AquariumScene() {
   }, []);
 
   const handleAddPlant = useCallback((plantItem: PlantItem) => {
-    // Her + tıklamasında katalogdaki positions listesinden rastgele TEK bir konum seç
     const positions = plantItem.positions ?? [[0, 0, 0]];
     const randomPos = positions[Math.floor(Math.random() * positions.length)] as [number, number, number];
-    // Hafif rastgele offset ekle — aynı bitki türü üst üste binmesin
     const jitterX = (Math.random() - 0.5) * 1.5;
     const jitterZ = (Math.random() - 0.5) * 1.0;
     const finalPos: [number, number, number] = [
@@ -430,7 +426,6 @@ export default function AquariumScene() {
     });
   }, []);
 
-  // Fotoğraf çekme / Screenshot modu
   const handleTakePhoto = useCallback(() => {
     setIsPhotoMode(true);
     setTimeout(() => {
@@ -476,7 +471,6 @@ export default function AquariumScene() {
 
   const totalFishCount = Object.values(fishCounts).reduce((a, b) => a + b, 0);
 
-  // Aydınlatma ayarlamaları
   const lightConfig = {
     day: {
       directionalColor: '#f0f9ff',
@@ -500,10 +494,8 @@ export default function AquariumScene() {
 
   return (
     <div className="w-screen h-screen relative overflow-hidden select-none bg-[#072d4a]">
-      {/* Arayüz Butonları (Fotoğraf Modunda Otomatik Gizlenir) */}
       {!isPhotoMode && (
         <>
-          {/* Sol Tank Boyutu Paneli */}
           <TankSizeSidebar
             options={
               tankData.tank.options ?? [
@@ -516,7 +508,6 @@ export default function AquariumScene() {
             onSelectVolume={handleSelectVolume}
           />
 
-          {/* Sol Üst: Bütçe / Sepet Çekmecesi */}
           <CartDrawer
             currentTank={currentTankOption}
             selectedSubstrate={selectedSubstrate}
@@ -528,14 +519,12 @@ export default function AquariumScene() {
             equipments={activeEquipments}
           />
 
-          {/* Üst Orta: Aydınlatma ve Fotoğraf Modu Çubuğu */}
           <LightingAndPhotoBar
             lightingMode={lightingMode}
             setLightingMode={setLightingMode}
             onTakePhoto={handleTakePhoto}
           />
 
-          {/* Sağ Üst: Su Değerleri Göstergesi */}
           <WaterMetricsHUD
             volumeLiters={currentVolume}
             selectedSubstrate={selectedSubstrate}
@@ -549,11 +538,11 @@ export default function AquariumScene() {
             fps={fps}
           />
 
-          {/* Alt Arama ve Yönetim Çubuğu */}
           <SearchBar
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
             searchResults={searchResults}
+            allCatalogItems={allCatalogItems}
             fishCounts={fishCounts}
             activePlants={activePlants}
             activeDecorations={activeDecorations}
@@ -575,7 +564,6 @@ export default function AquariumScene() {
         </>
       )}
 
-      {/* 3D WebGL Dünyası */}
       <Canvas
         camera={{ position: [0, 0, 8.5], fov: 55 }}
         gl={{ preserveDrawingBuffer: true }}

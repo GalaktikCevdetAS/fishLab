@@ -401,7 +401,6 @@ function AquariumScene() {
         if (hasHeater) {
             baseTemp = 25.5;
         } else {
-            // Isıtıcı yoksa ortam sıcaklığına doğru düşüş
             baseTemp = 22.0;
         }
         // Kumun etkisi
@@ -428,15 +427,14 @@ function AquariumScene() {
         }
         // Filtre ve Hava Taşı donanım etkisi
         if (hasFilter) {
-            totalPlantPpmReduction += 25.0; // Biyolojik dış filtre atığı emer
+            totalPlantPpmReduction += 25.0;
         }
         if (hasAirStone) {
-            totalPlantOxygen += 2.5; // Hava taşı bol oksijen kazandırır
+            totalPlantOxygen += 2.5;
         }
         const finalOxygen = Math.max(1.8, baseOxygen + totalPlantOxygen - totalOxygenConsumption);
         const finalPpm = Math.max(5, basePpm + totalBioload - totalPlantPpmReduction);
         const totalFish = Object.values(fishCounts).reduce((a, b)=>a + b, 0);
-        // Su kalitesi seviyeleri:
         let qLevel = 0;
         let quality = 'Kristal & Berrak (Seviye 1)';
         if (finalPpm > 40 || totalFish > 10) {
@@ -506,7 +504,6 @@ function AquariumScene() {
         }
     }, []);
     const handleAddPlant = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((plantItem)=>{
-        // Her + tıklamasında katalogdaki positions listesinden rastgele TEK bir konum seç
         const positions = plantItem.positions ?? [
             [
                 0,
@@ -515,7 +512,6 @@ function AquariumScene() {
             ]
         ];
         const randomPos = positions[Math.floor(Math.random() * positions.length)];
-        // Hafif rastgele offset ekle — aynı bitki türü üst üste binmesin
         const jitterX = (Math.random() - 0.5) * 1.5;
         const jitterZ = (Math.random() - 0.5) * 1.0;
         const finalPos = [
@@ -568,7 +564,6 @@ function AquariumScene() {
             ];
         });
     }, []);
-    // Fotoğraf çekme / Screenshot modu
     const handleTakePhoto = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(()=>{
         setIsPhotoMode(true);
         setTimeout(()=>{
@@ -613,7 +608,7 @@ function AquariumScene() {
                         className: "w-8 h-8 border-2 border-sky-400 border-t-transparent rounded-full animate-spin"
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 470,
+                        lineNumber: 465,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -621,23 +616,22 @@ function AquariumScene() {
                         children: "Akvaryum simülasyonu yükleniyor..."
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 471,
+                        lineNumber: 466,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AquariumScene.tsx",
-                lineNumber: 469,
+                lineNumber: 464,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/AquariumScene.tsx",
-            lineNumber: 468,
+            lineNumber: 463,
             columnNumber: 7
         }, this);
     }
     const totalFishCount = Object.values(fishCounts).reduce((a, b)=>a + b, 0);
-    // Aydınlatma ayarlamaları
     const lightConfig = {
         day: {
             directionalColor: '#f0f9ff',
@@ -700,7 +694,7 @@ function AquariumScene() {
                         onSelectVolume: handleSelectVolume
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 507,
+                        lineNumber: 499,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CartDrawer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -714,7 +708,7 @@ function AquariumScene() {
                         equipments: activeEquipments
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 520,
+                        lineNumber: 511,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$LightingAndPhotoBar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -723,7 +717,7 @@ function AquariumScene() {
                         onTakePhoto: handleTakePhoto
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 532,
+                        lineNumber: 522,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$WaterMetricsHUD$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -739,13 +733,14 @@ function AquariumScene() {
                         fps: fps
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 539,
+                        lineNumber: 528,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$SearchBar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         searchQuery: searchQuery,
                         setSearchQuery: setSearchQuery,
                         searchResults: searchResults,
+                        allCatalogItems: allCatalogItems,
                         fishCounts: fishCounts,
                         activePlants: activePlants,
                         activeDecorations: activeDecorations,
@@ -765,13 +760,13 @@ function AquariumScene() {
                         onToggleEquipment: handleToggleEquipment
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 553,
+                        lineNumber: 541,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AquariumScene.tsx",
-                lineNumber: 505,
+                lineNumber: 498,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$react$2d$three$2d$fiber$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["Canvas"], {
@@ -795,7 +790,7 @@ function AquariumScene() {
                         qualityLevel: qualityLevel
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 587,
+                        lineNumber: 575,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("directionalLight", {
@@ -808,7 +803,7 @@ function AquariumScene() {
                         color: lightConfig.directionalColor
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 589,
+                        lineNumber: 577,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ambientLight", {
@@ -816,7 +811,7 @@ function AquariumScene() {
                         color: lightConfig.ambientColor
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 594,
+                        lineNumber: 582,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(GlassTankBox, {
@@ -824,7 +819,7 @@ function AquariumScene() {
                         qualityLevel: qualityLevel
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 599,
+                        lineNumber: 587,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(WaterVolumeBox, {
@@ -832,7 +827,7 @@ function AquariumScene() {
                         qualityLevel: qualityLevel
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 600,
+                        lineNumber: 588,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(WaterSurface, {
@@ -840,7 +835,7 @@ function AquariumScene() {
                         qualityLevel: qualityLevel
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 601,
+                        lineNumber: 589,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Substrate$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -850,7 +845,7 @@ function AquariumScene() {
                         onHeightCalculated: handleHeightCalculated
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 603,
+                        lineNumber: 591,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$PlantField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -859,7 +854,7 @@ function AquariumScene() {
                         substrateHeight: effectiveSubstrateHeight
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 610,
+                        lineNumber: 598,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DecorationField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -868,7 +863,7 @@ function AquariumScene() {
                         substrateHeight: effectiveSubstrateHeight
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 616,
+                        lineNumber: 604,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$BubbleEmitter$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -878,7 +873,7 @@ function AquariumScene() {
                         enabled: true
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 622,
+                        lineNumber: 610,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$EquipmentField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -889,7 +884,7 @@ function AquariumScene() {
                         lightingMode: lightingMode
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 629,
+                        lineNumber: 617,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SimulationController, {
@@ -898,7 +893,7 @@ function AquariumScene() {
                         fishManagerRef: fishManagerRef
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 637,
+                        lineNumber: 625,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$drei$2f$core$2f$OrbitControls$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["OrbitControls"], {
@@ -909,19 +904,19 @@ function AquariumScene() {
                         maxDistance: 25
                     }, void 0, false, {
                         fileName: "[project]/src/components/AquariumScene.tsx",
-                        lineNumber: 643,
+                        lineNumber: 631,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AquariumScene.tsx",
-                lineNumber: 579,
+                lineNumber: 567,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/AquariumScene.tsx",
-        lineNumber: 502,
+        lineNumber: 496,
         columnNumber: 5
     }, this);
 }
@@ -3692,14 +3687,49 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 'use client';
 ;
 ;
-function SearchBar({ searchQuery, setSearchQuery, searchResults, fishCounts, activePlants, activeDecorations, activeEquipments, selectedSubstrate, substrateKg, setSubstrateKg, onSelectSubstrate, onRemoveSubstrate, onAddFish, onRemoveFish, onClearSpecies, onAddPlant, onRemovePlant, onAddDecoration, onRemoveDecoration, onToggleEquipment }) {
+function SearchBar({ searchQuery, setSearchQuery, searchResults, allCatalogItems, fishCounts, activePlants, activeDecorations, activeEquipments, selectedSubstrate, substrateKg, setSubstrateKg, onSelectSubstrate, onRemoveSubstrate, onAddFish, onRemoveFish, onClearSpecies, onAddPlant, onRemovePlant, onAddDecoration, onRemoveDecoration, onToggleEquipment }) {
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('all');
+    const [isCatalogModalOpen, setIsCatalogModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [modalTab, setModalTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('Balık');
+    // Taşınabilir Pencere State ve Ref'leri
+    const [modalPosition, setModalPosition] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
+        x: 0,
+        y: 0
+    });
+    const isDraggingRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(false);
+    const dragOffsetRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({
+        x: 0,
+        y: 0
+    });
+    const handleMouseDown = (e)=>{
+        isDraggingRef.current = true;
+        dragOffsetRef.current = {
+            x: e.clientX - modalPosition.x,
+            y: e.clientY - modalPosition.y
+        };
+    };
+    const handleMouseMove = (e)=>{
+        if (!isDraggingRef.current) return;
+        setModalPosition({
+            x: e.clientX - dragOffsetRef.current.x,
+            y: e.clientY - dragOffsetRef.current.y
+        });
+    };
+    const handleMouseUp = ()=>{
+        isDraggingRef.current = false;
+    };
     const filteredResults = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         if (activeTab === 'all') return searchResults;
         return searchResults.filter((item)=>item.category === activeTab);
     }, [
         searchResults,
         activeTab
+    ]);
+    const modalFilteredItems = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+        return allCatalogItems.filter((item)=>item.category === modalTab);
+    }, [
+        allCatalogItems,
+        modalTab
     ]);
     const plantCounts = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         const counts = {};
@@ -3724,455 +3754,802 @@ function SearchBar({ searchQuery, setSearchQuery, searchResults, fishCounts, act
     }, [
         activeEquipments
     ]);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "absolute bottom-6 left-1/2 -translate-x-1/2 z-50 w-[94vw] max-w-[680px]",
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
-            searchResults.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mb-2.5 flex flex-col gap-2 rounded-2xl bg-sky-950/95 backdrop-blur-xl border border-sky-400/40 p-3 shadow-2xl max-h-[380px] overflow-y-auto",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute bottom-6 left-1/2 -translate-x-1/2 z-50 w-[94vw] max-w-[760px]",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex gap-1.5 pb-2 border-b border-sky-400/20 text-xs overflow-x-auto",
+                    searchResults.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-2.5 flex flex-col gap-2 rounded-2xl bg-sky-950/95 backdrop-blur-xl border border-sky-400/40 p-3 shadow-2xl max-h-[380px] overflow-y-auto",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: ()=>setActiveTab('all'),
-                                className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'all' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex gap-1.5 pb-2 border-b border-sky-400/20 text-xs overflow-x-auto",
                                 children: [
-                                    "Tümü (",
-                                    searchResults.length,
-                                    ")"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>setActiveTab('all'),
+                                        className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'all' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
+                                        children: [
+                                            "Tümü (",
+                                            searchResults.length,
+                                            ")"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 127,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>setActiveTab('Zemin'),
+                                        className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Zemin' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
+                                        children: "🏖️ Zemin"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 138,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>setActiveTab('Balık'),
+                                        className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Balık' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
+                                        children: "🐟 Balıklar"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 149,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>setActiveTab('Bitki'),
+                                        className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Bitki' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
+                                        children: "🌿 Bitkiler"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 160,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>setActiveTab('Dekor'),
+                                        className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Dekor' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
+                                        children: "🪨 Dekor"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 171,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>setActiveTab('Ekipman'),
+                                        className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Ekipman' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
+                                        children: "⚙️ Ekipman"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 182,
+                                        columnNumber: 15
+                                    }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 92,
+                                lineNumber: 126,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: ()=>setActiveTab('Zemin'),
-                                className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Zemin' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
-                                children: "🏖️ Zemin"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 103,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: ()=>setActiveTab('Balık'),
-                                className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Balık' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
-                                children: "🐟 Balıklar"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 114,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: ()=>setActiveTab('Bitki'),
-                                className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Bitki' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
-                                children: "🌿 Bitkiler"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 125,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: ()=>setActiveTab('Dekor'),
-                                className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Dekor' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
-                                children: "🪨 Dekor"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 136,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: ()=>setActiveTab('Ekipman'),
-                                className: `px-2.5 py-1 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${activeTab === 'Ekipman' ? 'bg-sky-500 text-white font-semibold shadow' : 'text-sky-300 hover:bg-sky-900/60'}`,
-                                children: "⚙️ Ekipman"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 147,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                        lineNumber: 91,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col gap-1.5",
-                        children: filteredResults.map((item)=>{
-                            const isSubstrate = item.category === 'Zemin';
-                            const isFish = item.category === 'Balık';
-                            const isPlant = item.category === 'Bitki';
-                            const isDeco = item.category === 'Dekor';
-                            const isEquip = item.category === 'Ekipman';
-                            const fCount = isFish ? fishCounts[item.id] || 0 : 0;
-                            const pCount = isPlant ? plantCounts[item.id] || 0 : 0;
-                            const dCount = isDeco ? decoCounts[item.id] || 0 : 0;
-                            const isEquipActive = isEquip ? equipmentIds.has(item.id) : false;
-                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center justify-between rounded-xl bg-sky-900/40 hover:bg-sky-900/60 transition-colors p-2.5 text-sky-100",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-3 text-sm",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-col gap-1.5",
+                                children: filteredResults.map((item)=>{
+                                    const isSubstrate = item.category === 'Zemin';
+                                    const isFish = item.category === 'Balık';
+                                    const isPlant = item.category === 'Bitki';
+                                    const isDeco = item.category === 'Dekor';
+                                    const isEquip = item.category === 'Ekipman';
+                                    const fCount = isFish ? fishCounts[item.id] || 0 : 0;
+                                    const pCount = isPlant ? plantCounts[item.id] || 0 : 0;
+                                    const dCount = isDeco ? decoCounts[item.id] || 0 : 0;
+                                    const isEquipActive = isEquip ? equipmentIds.has(item.id) : false;
+                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center justify-between rounded-xl bg-sky-900/40 hover:bg-sky-900/60 transition-colors p-2.5 text-sky-100",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-xl",
-                                                children: item.icon || '✨'
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                lineNumber: 180,
-                                                columnNumber: 21
-                                            }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-3 text-sm",
                                                 children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-xl",
+                                                        children: item.icon || '✨'
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                        lineNumber: 215,
+                                                        columnNumber: 23
+                                                    }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold flex items-center gap-2",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                children: item.name
-                                                            }, void 0, false, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "font-semibold flex items-center gap-2",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        children: item.name
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                        lineNumber: 218,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "text-[10px] text-sky-400 font-normal",
+                                                                        children: [
+                                                                            "(",
+                                                                            item.category,
+                                                                            ")"
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                        lineNumber: 219,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    item.price && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "text-[11px] font-mono text-emerald-400 font-bold",
+                                                                        children: [
+                                                                            item.price,
+                                                                            " ₺",
+                                                                            isSubstrate ? '/kg' : ''
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                        lineNumber: 221,
+                                                                        columnNumber: 29
+                                                                    }, this),
+                                                                    isFish && fCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "bg-sky-600 px-1.5 py-0.5 rounded text-[10px] font-bold",
+                                                                        children: [
+                                                                            fCount,
+                                                                            " Adet"
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                        lineNumber: 226,
+                                                                        columnNumber: 29
+                                                                    }, this),
+                                                                    isPlant && pCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "bg-emerald-600 px-1.5 py-0.5 rounded text-[10px] font-bold",
+                                                                        children: [
+                                                                            pCount,
+                                                                            " Grup"
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                        lineNumber: 229,
+                                                                        columnNumber: 29
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
                                                                 fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                                lineNumber: 183,
+                                                                lineNumber: 217,
                                                                 columnNumber: 25
                                                             }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-[10px] text-sky-400 font-normal",
-                                                                children: [
-                                                                    "(",
-                                                                    item.category,
-                                                                    ")"
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                                lineNumber: 184,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            item.price && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-[11px] font-mono text-emerald-400 font-bold",
-                                                                children: [
-                                                                    item.price,
-                                                                    " ₺",
-                                                                    isSubstrate ? '/kg' : ''
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                                lineNumber: 188,
-                                                                columnNumber: 27
-                                                            }, this),
-                                                            isFish && fCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "bg-sky-600 px-1.5 py-0.5 rounded text-[10px] font-bold",
-                                                                children: [
-                                                                    fCount,
-                                                                    " Adet"
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                                lineNumber: 193,
-                                                                columnNumber: 27
-                                                            }, this),
-                                                            isPlant && pCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "bg-emerald-600 px-1.5 py-0.5 rounded text-[10px] font-bold",
-                                                                children: [
-                                                                    pCount,
-                                                                    " Grup"
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                                lineNumber: 198,
-                                                                columnNumber: 27
-                                                            }, this),
-                                                            isDeco && dCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "bg-amber-600 px-1.5 py-0.5 rounded text-[10px] font-bold",
-                                                                children: "Aktif"
+                                                            item.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "text-[11px] text-sky-300/80",
+                                                                children: item.description
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                                lineNumber: 203,
-                                                                columnNumber: 27
-                                                            }, this),
-                                                            isEquip && isEquipActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "bg-teal-600 px-1.5 py-0.5 rounded text-[10px] font-bold",
-                                                                children: "Çalışıyor"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                                lineNumber: 208,
-                                                                columnNumber: 27
+                                                                lineNumber: 232,
+                                                                columnNumber: 46
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                        lineNumber: 182,
+                                                        lineNumber: 216,
                                                         columnNumber: 23
-                                                    }, this),
-                                                    item.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "text-[11px] text-sky-300/80",
-                                                        children: item.description
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                        lineNumber: 214,
-                                                        columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                lineNumber: 181,
+                                                lineNumber: 214,
                                                 columnNumber: 21
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                        lineNumber: 179,
-                                        columnNumber: 19
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-1.5",
-                                        children: [
-                                            isSubstrate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                type: "button",
-                                                onClick: ()=>onSelectSubstrate(item),
-                                                className: `px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${selectedSubstrate?.id === item.id ? 'bg-emerald-500 text-sky-950 font-extrabold' : 'bg-sky-400 hover:bg-sky-300 text-sky-950'}`,
-                                                children: selectedSubstrate?.id === item.id ? 'Aktif ✓' : 'Seç +'
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                lineNumber: 222,
-                                                columnNumber: 23
                                             }, this),
-                                            isFish && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center gap-1",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-1.5",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    isSubstrate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         type: "button",
-                                                        onClick: ()=>onRemoveFish(item),
-                                                        disabled: fCount === 0,
-                                                        className: `w-6 h-6 rounded flex items-center justify-center font-bold text-xs transition-colors ${fCount === 0 ? 'bg-slate-700 text-slate-400 cursor-not-allowed' : 'bg-sky-600 hover:bg-sky-500 text-white cursor-pointer'}`,
-                                                        children: "-"
+                                                        onClick: ()=>onSelectSubstrate(item),
+                                                        className: `px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${selectedSubstrate?.id === item.id ? 'bg-emerald-500 text-sky-950 font-extrabold' : 'bg-sky-400 hover:bg-sky-300 text-sky-950'}`,
+                                                        children: selectedSubstrate?.id === item.id ? 'Aktif ✓' : 'Seç +'
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ui/SearchBar.tsx",
                                                         lineNumber: 238,
                                                         columnNumber: 25
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "w-5 text-center text-xs font-bold font-mono",
-                                                        children: fCount
-                                                    }, void 0, false, {
+                                                    isFish && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center gap-1",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                type: "button",
+                                                                onClick: ()=>onRemoveFish(item),
+                                                                disabled: fCount === 0,
+                                                                className: `w-6 h-6 rounded flex items-center justify-center font-bold text-xs ${fCount === 0 ? 'bg-slate-700 text-slate-400 cursor-not-allowed' : 'bg-sky-600 hover:bg-sky-500 text-white cursor-pointer'}`,
+                                                                children: "-"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                lineNumber: 253,
+                                                                columnNumber: 27
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "w-5 text-center text-xs font-bold font-mono",
+                                                                children: fCount
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                lineNumber: 263,
+                                                                columnNumber: 27
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                type: "button",
+                                                                onClick: ()=>onAddFish(item),
+                                                                className: "w-6 h-6 rounded bg-sky-600 hover:bg-sky-500 text-white flex items-center justify-center font-bold text-xs cursor-pointer",
+                                                                children: "+"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                lineNumber: 264,
+                                                                columnNumber: 27
+                                                            }, this),
+                                                            fCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                type: "button",
+                                                                onClick: ()=>onClearSpecies(item),
+                                                                className: "ml-1 px-2 py-0.5 rounded bg-rose-500/80 hover:bg-rose-500 text-white text-[10px] cursor-pointer",
+                                                                children: "🗑️"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                lineNumber: 272,
+                                                                columnNumber: 29
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                        lineNumber: 250,
+                                                        lineNumber: 252,
                                                         columnNumber: 25
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        type: "button",
-                                                        onClick: ()=>onAddFish(item),
-                                                        className: "w-6 h-6 rounded bg-sky-600 hover:bg-sky-500 text-white flex items-center justify-center font-bold text-xs cursor-pointer transition-colors",
-                                                        children: "+"
-                                                    }, void 0, false, {
+                                                    isPlant && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center gap-1",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                type: "button",
+                                                                onClick: ()=>onRemovePlant(item.id),
+                                                                disabled: pCount === 0,
+                                                                className: `w-6 h-6 rounded flex items-center justify-center font-bold text-xs ${pCount === 0 ? 'bg-slate-700 text-slate-400 cursor-not-allowed' : 'bg-emerald-600 hover:bg-emerald-500 text-white cursor-pointer'}`,
+                                                                children: "-"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                lineNumber: 285,
+                                                                columnNumber: 27
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "w-5 text-center text-xs font-bold font-mono",
+                                                                children: pCount
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                lineNumber: 295,
+                                                                columnNumber: 27
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                type: "button",
+                                                                onClick: ()=>onAddPlant(item),
+                                                                className: "w-6 h-6 rounded bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center font-bold text-xs cursor-pointer",
+                                                                children: "+"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                lineNumber: 296,
+                                                                columnNumber: 27
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                        lineNumber: 253,
+                                                        lineNumber: 284,
                                                         columnNumber: 25
                                                     }, this),
-                                                    fCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    isDeco && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         type: "button",
-                                                        onClick: ()=>onClearSpecies(item),
-                                                        title: "Tümünü Temizle",
-                                                        className: "ml-1 px-2 py-0.5 rounded bg-rose-500/80 hover:bg-rose-500 text-white text-[10px] cursor-pointer transition-colors",
-                                                        children: "🗑️"
+                                                        onClick: ()=>dCount > 0 ? onRemoveDecoration(item.id) : onAddDecoration(item),
+                                                        className: `px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${dCount > 0 ? 'bg-rose-500/80 text-white' : 'bg-amber-500 hover:bg-amber-400 text-slate-950'}`,
+                                                        children: dCount > 0 ? 'Kaldır ✕' : 'Ekle +'
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                        lineNumber: 261,
-                                                        columnNumber: 27
+                                                        lineNumber: 307,
+                                                        columnNumber: 25
+                                                    }, this),
+                                                    isEquip && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        type: "button",
+                                                        onClick: ()=>onToggleEquipment(item),
+                                                        className: `px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${isEquipActive ? 'bg-teal-500 text-slate-950 font-bold' : 'bg-sky-600 hover:bg-sky-500 text-white'}`,
+                                                        children: isEquipActive ? 'Çıkar ✕' : 'Kur +'
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                        lineNumber: 319,
+                                                        columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                lineNumber: 237,
-                                                columnNumber: 23
-                                            }, this),
-                                            isPlant && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center gap-1",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        type: "button",
-                                                        onClick: ()=>onRemovePlant(item.id),
-                                                        disabled: pCount === 0,
-                                                        className: `w-6 h-6 rounded flex items-center justify-center font-bold text-xs transition-colors ${pCount === 0 ? 'bg-slate-700 text-slate-400 cursor-not-allowed' : 'bg-emerald-600 hover:bg-emerald-500 text-white cursor-pointer'}`,
-                                                        children: "-"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                        lineNumber: 276,
-                                                        columnNumber: 25
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "w-5 text-center text-xs font-bold font-mono",
-                                                        children: pCount
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                        lineNumber: 288,
-                                                        columnNumber: 25
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        type: "button",
-                                                        onClick: ()=>onAddPlant(item),
-                                                        className: "w-6 h-6 rounded bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center font-bold text-xs cursor-pointer transition-colors",
-                                                        children: "+"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                        lineNumber: 291,
-                                                        columnNumber: 25
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                lineNumber: 275,
-                                                columnNumber: 23
-                                            }, this),
-                                            isDeco && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                type: "button",
-                                                onClick: ()=>{
-                                                    if (dCount > 0) {
-                                                        onRemoveDecoration(item.id);
-                                                    } else {
-                                                        onAddDecoration(item);
-                                                    }
-                                                },
-                                                className: `px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${dCount > 0 ? 'bg-rose-500/80 hover:bg-rose-500 text-white' : 'bg-amber-500 hover:bg-amber-400 text-slate-950'}`,
-                                                children: dCount > 0 ? 'Kaldır ✕' : 'Ekle +'
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                lineNumber: 303,
-                                                columnNumber: 23
-                                            }, this),
-                                            isEquip && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                type: "button",
-                                                onClick: ()=>onToggleEquipment(item),
-                                                className: `px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${isEquipActive ? 'bg-teal-500 text-slate-950 font-bold' : 'bg-sky-600 hover:bg-sky-500 text-white'}`,
-                                                children: isEquipActive ? 'Çıkar ✕' : 'Kur +'
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                                lineNumber: 324,
-                                                columnNumber: 23
+                                                lineNumber: 236,
+                                                columnNumber: 21
                                             }, this)
                                         ]
-                                    }, void 0, true, {
+                                    }, item.id, true, {
                                         fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                        lineNumber: 219,
+                                        lineNumber: 210,
                                         columnNumber: 19
-                                    }, this)
-                                ]
-                            }, item.id, true, {
-                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 175,
-                                columnNumber: 17
-                            }, this);
-                        })
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                        lineNumber: 161,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                lineNumber: 89,
-                columnNumber: 9
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-center gap-3 rounded-full bg-sky-950/90 backdrop-blur-xl border border-sky-400/40 px-5 py-3 shadow-2xl",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "text-lg",
-                        children: "✨"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                        lineNumber: 346,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                        type: "text",
-                        placeholder: "Akvaryuma ekle: kum, balık, bitki, kaya veya filtre arayın...",
-                        value: searchQuery,
-                        onChange: (e)=>setSearchQuery(e.target.value),
-                        className: "w-full bg-transparent border-none text-white text-sm outline-none placeholder:text-sky-300/60"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                        lineNumber: 347,
-                        columnNumber: 9
-                    }, this),
-                    searchQuery && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        type: "button",
-                        onClick: ()=>setSearchQuery(''),
-                        className: "text-sky-400 hover:text-sky-200 text-xs px-1 cursor-pointer",
-                        children: "✕"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/SearchBar.tsx",
-                        lineNumber: 356,
-                        columnNumber: 11
-                    }, this),
-                    selectedSubstrate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-2 border-l border-sky-400/30 pl-3 whitespace-nowrap text-xs",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-sky-300 font-mono font-medium",
-                                children: [
-                                    selectedSubstrate.name.split(' ')[0],
-                                    " (",
-                                    substrateKg,
-                                    "kg)"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 368,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: ()=>setSubstrateKg((p)=>Math.max(p - 1, 1)),
-                                className: "w-5 h-5 rounded bg-sky-600 hover:bg-sky-500 text-white flex items-center justify-center font-bold cursor-pointer",
-                                children: "-"
+                                    }, this);
+                                })
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 371,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: ()=>setSubstrateKg((p)=>p + 1),
-                                className: "w-5 h-5 rounded bg-sky-600 hover:bg-sky-500 text-white flex items-center justify-center font-bold cursor-pointer",
-                                children: "+"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 378,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                type: "button",
-                                onClick: onRemoveSubstrate,
-                                className: "text-rose-400 hover:text-rose-300 ml-1 text-[11px] cursor-pointer",
-                                children: "Sil"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/SearchBar.tsx",
-                                lineNumber: 385,
+                                lineNumber: 196,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ui/SearchBar.tsx",
-                        lineNumber: 367,
+                        lineNumber: 124,
                         columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex items-center gap-3 rounded-full bg-sky-950/90 backdrop-blur-xl border border-sky-400/40 px-5 py-3 shadow-2xl",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-lg",
+                                children: "✨"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                lineNumber: 339,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                type: "text",
+                                placeholder: "Akvaryuma ekle: kum, balık, bitki, kaya veya filtre arayın...",
+                                value: searchQuery,
+                                onChange: (e)=>setSearchQuery(e.target.value),
+                                className: "w-full bg-transparent border-none text-white text-sm outline-none placeholder:text-sky-300/60"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                lineNumber: 340,
+                                columnNumber: 11
+                            }, this),
+                            searchQuery && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
+                                onClick: ()=>setSearchQuery(''),
+                                className: "text-sky-400 hover:text-sky-200 text-xs px-1 cursor-pointer",
+                                children: "✕"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                lineNumber: 349,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
+                                onClick: ()=>setIsCatalogModalOpen(true),
+                                className: "whitespace-nowrap px-4 py-1.5 rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white text-xs font-bold shadow-lg transition-all cursor-pointer flex items-center gap-1.5",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: "📦"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 364,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: "Tüm Ürünler"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 365,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                lineNumber: 359,
+                                columnNumber: 11
+                            }, this),
+                            selectedSubstrate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-2 border-l border-sky-400/30 pl-3 whitespace-nowrap text-xs",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-sky-300 font-mono font-medium",
+                                        children: [
+                                            selectedSubstrate.name.split(' ')[0],
+                                            " (",
+                                            substrateKg,
+                                            "kg)"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 371,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>setSubstrateKg((p)=>Math.max(p - 1, 1)),
+                                        className: "w-5 h-5 rounded bg-sky-600 hover:bg-sky-500 text-white flex items-center justify-center font-bold cursor-pointer",
+                                        children: "-"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 374,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: ()=>setSubstrateKg((p)=>p + 1),
+                                        className: "w-5 h-5 rounded bg-sky-600 hover:bg-sky-500 text-white flex items-center justify-center font-bold cursor-pointer",
+                                        children: "+"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 381,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: onRemoveSubstrate,
+                                        className: "text-rose-400 hover:text-rose-300 ml-1 text-[11px] cursor-pointer",
+                                        children: "Sil"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                        lineNumber: 388,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                lineNumber: 370,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/ui/SearchBar.tsx",
+                        lineNumber: 338,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ui/SearchBar.tsx",
-                lineNumber: 345,
+                lineNumber: 121,
                 columnNumber: 7
+            }, this),
+            isCatalogModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "fixed z-[150] select-none",
+                style: {
+                    top: `calc(50% + ${modalPosition.y}px)`,
+                    left: `calc(50% + ${modalPosition.x}px)`,
+                    transform: 'translate(-50%, -50%)'
+                },
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "w-[90vw] max-w-[680px] bg-sky-950/95 border border-sky-400/60 rounded-3xl shadow-2xl p-6 flex flex-col max-h-[85vh] text-sky-100 backdrop-blur-2xl",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            onMouseDown: handleMouseDown,
+                            onMouseMove: handleMouseMove,
+                            onMouseUp: handleMouseUp,
+                            className: "flex items-center justify-between pb-4 border-b border-sky-400/30 cursor-move",
+                            title: "Pencereyi taşımak için basıp sürükleyin",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-2.5 pointer-events-none",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-2xl",
+                                            children: "🛍️"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                            lineNumber: 420,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "text-lg font-bold text-white",
+                                            children: "Akvaryum Malzeme Kataloğu (Tüm Ürünler)"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                            lineNumber: 421,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-[10px] bg-sky-800/60 text-sky-300 px-2 py-0.5 rounded-full",
+                                            children: "Taşınabilir ✥"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                            lineNumber: 422,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                    lineNumber: 419,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    type: "button",
+                                    onClick: ()=>setIsCatalogModalOpen(false),
+                                    className: "w-8 h-8 rounded-full bg-sky-900/60 hover:bg-sky-800 text-sky-300 hover:text-white flex items-center justify-center font-bold transition-colors cursor-pointer",
+                                    children: "✕"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                    lineNumber: 424,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                            lineNumber: 412,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex gap-2 py-3 border-b border-sky-400/20 overflow-x-auto shrink-0",
+                            children: [
+                                'Balık',
+                                'Bitki',
+                                'Zemin',
+                                'Dekor',
+                                'Ekipman'
+                            ].map((tab)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    type: "button",
+                                    onClick: ()=>setModalTab(tab),
+                                    className: `px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${modalTab === tab ? 'bg-sky-500 text-white shadow-lg scale-105' : 'bg-sky-900/40 text-sky-300 hover:bg-sky-900/80'}`,
+                                    children: [
+                                        tab === 'Balık' && '🐟 Balıklar',
+                                        tab === 'Bitki' && '🌿 Bitkiler',
+                                        tab === 'Zemin' && '🏖️ Zemin & Kum',
+                                        tab === 'Dekor' && '🪨 Dekorlar',
+                                        tab === 'Ekipman' && '⚙️ Ekipmanlar'
+                                    ]
+                                }, tab, true, {
+                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                    lineNumber: 436,
+                                    columnNumber: 17
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                            lineNumber: 434,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex-1 overflow-y-auto py-4 flex flex-col gap-2.5 pr-1 custom-scrollbar",
+                            children: modalFilteredItems.map((item)=>{
+                                const isSubstrate = item.category === 'Zemin';
+                                const isFish = item.category === 'Balık';
+                                const isPlant = item.category === 'Bitki';
+                                const isDeco = item.category === 'Dekor';
+                                const isEquip = item.category === 'Ekipman';
+                                const fCount = isFish ? fishCounts[item.id] || 0 : 0;
+                                const pCount = isPlant ? plantCounts[item.id] || 0 : 0;
+                                const dCount = isDeco ? decoCounts[item.id] || 0 : 0;
+                                const isEquipActive = isEquip ? equipmentIds.has(item.id) : false;
+                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center justify-between rounded-2xl bg-sky-900/40 hover:bg-sky-900/70 border border-sky-400/20 transition-all p-3.5",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center gap-3.5",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-2xl p-2 rounded-xl bg-sky-950/60 border border-sky-400/20",
+                                                    children: item.icon || '✨'
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                    lineNumber: 475,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "font-bold text-sm flex items-center gap-2",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    children: item.name
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                    lineNumber: 480,
+                                                                    columnNumber: 27
+                                                                }, this),
+                                                                item.price && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-xs font-mono text-emerald-400 font-bold bg-emerald-950/50 px-2 py-0.5 rounded-full border border-emerald-500/30",
+                                                                    children: [
+                                                                        item.price,
+                                                                        " ₺",
+                                                                        isSubstrate ? '/kg' : ''
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                                    lineNumber: 482,
+                                                                    columnNumber: 29
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                            lineNumber: 479,
+                                                            columnNumber: 25
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "text-xs text-sky-300/80 mt-0.5",
+                                                            children: item.description
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                            lineNumber: 487,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                    lineNumber: 478,
+                                                    columnNumber: 23
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                            lineNumber: 474,
+                                            columnNumber: 21
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                isSubstrate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    onClick: ()=>onSelectSubstrate(item),
+                                                    className: `px-4 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${selectedSubstrate?.id === item.id ? 'bg-emerald-500 text-slate-950 font-extrabold shadow' : 'bg-sky-400 hover:bg-sky-300 text-slate-950'}`,
+                                                    children: selectedSubstrate?.id === item.id ? 'Aktif Kum ✓' : 'Kum Seç +'
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                    lineNumber: 493,
+                                                    columnNumber: 25
+                                                }, this),
+                                                isFish && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-1.5 bg-sky-950/60 p-1.5 rounded-xl border border-sky-400/20",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            onClick: ()=>onRemoveFish(item),
+                                                            disabled: fCount === 0,
+                                                            className: `w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${fCount === 0 ? 'bg-slate-800 text-slate-500 cursor-not-allowed' : 'bg-sky-600 hover:bg-sky-500 text-white cursor-pointer'}`,
+                                                            children: "-"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                            lineNumber: 508,
+                                                            columnNumber: 27
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "w-6 text-center text-xs font-bold font-mono",
+                                                            children: fCount
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                            lineNumber: 518,
+                                                            columnNumber: 27
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            onClick: ()=>onAddFish(item),
+                                                            className: "w-7 h-7 rounded-lg bg-sky-600 hover:bg-sky-500 text-white flex items-center justify-center font-bold text-xs cursor-pointer",
+                                                            children: "+"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                            lineNumber: 519,
+                                                            columnNumber: 27
+                                                        }, this),
+                                                        fCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            onClick: ()=>onClearSpecies(item),
+                                                            title: "Tümünü Kaldır",
+                                                            className: "ml-1 px-2 py-1 rounded-lg bg-rose-500 hover:bg-rose-400 text-white text-xs cursor-pointer",
+                                                            children: "🗑️"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                            lineNumber: 527,
+                                                            columnNumber: 29
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                    lineNumber: 507,
+                                                    columnNumber: 25
+                                                }, this),
+                                                isPlant && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-1.5 bg-sky-950/60 p-1.5 rounded-xl border border-sky-400/20",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            onClick: ()=>onRemovePlant(item.id),
+                                                            disabled: pCount === 0,
+                                                            className: `w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${pCount === 0 ? 'bg-slate-800 text-slate-500 cursor-not-allowed' : 'bg-emerald-600 hover:bg-emerald-500 text-white cursor-pointer'}`,
+                                                            children: "-"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                            lineNumber: 541,
+                                                            columnNumber: 27
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "w-6 text-center text-xs font-bold font-mono",
+                                                            children: pCount
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                            lineNumber: 551,
+                                                            columnNumber: 27
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            onClick: ()=>onAddPlant(item),
+                                                            className: "w-7 h-7 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center font-bold text-xs cursor-pointer",
+                                                            children: "+"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                            lineNumber: 552,
+                                                            columnNumber: 27
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                    lineNumber: 540,
+                                                    columnNumber: 25
+                                                }, this),
+                                                isDeco && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    onClick: ()=>dCount > 0 ? onRemoveDecoration(item.id) : onAddDecoration(item),
+                                                    className: `px-4 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${dCount > 0 ? 'bg-rose-500 hover:bg-rose-400 text-white' : 'bg-amber-500 hover:bg-amber-400 text-slate-950'}`,
+                                                    children: dCount > 0 ? 'Kaldır ✕' : 'Ekle +'
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                    lineNumber: 563,
+                                                    columnNumber: 25
+                                                }, this),
+                                                isEquip && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    onClick: ()=>onToggleEquipment(item),
+                                                    className: `px-4 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${isEquipActive ? 'bg-teal-500 text-slate-950 font-extrabold' : 'bg-sky-600 hover:bg-sky-500 text-white'}`,
+                                                    children: isEquipActive ? 'Sök ✕' : 'Kur +'
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                                    lineNumber: 575,
+                                                    columnNumber: 25
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                            lineNumber: 491,
+                                            columnNumber: 21
+                                        }, this)
+                                    ]
+                                }, item.id, true, {
+                                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                    lineNumber: 470,
+                                    columnNumber: 19
+                                }, this);
+                            })
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                            lineNumber: 456,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "pt-3 border-t border-sky-400/30 flex justify-end shrink-0",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
+                                onClick: ()=>setIsCatalogModalOpen(false),
+                                className: "px-6 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-lg transition-all cursor-pointer",
+                                children: "Tamam / Kapat"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                                lineNumber: 593,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/SearchBar.tsx",
+                            lineNumber: 592,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ui/SearchBar.tsx",
+                    lineNumber: 410,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/ui/SearchBar.tsx",
+                lineNumber: 402,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ui/SearchBar.tsx",
-        lineNumber: 86,
+        lineNumber: 119,
         columnNumber: 5
     }, this);
 }
